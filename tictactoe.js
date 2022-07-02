@@ -10,6 +10,7 @@ const XandOMatrix = [];
 let value = "O";
 let row = 0;
 let colown = 0;
+let count = 0;
 XandOMatrix.push(row1);
 XandOMatrix.push(row2);
 XandOMatrix.push(row3);
@@ -43,10 +44,16 @@ while (row < XandOMatrix.length) {
   XandOMatrix[row][colown].addEventListener("click", function (e) {
     if (value === "O" && !e.path[0].textContent) {
       value = "X";
+      count++;
       e.path[0].textContent = value;
     } else if (value === "X" && !e.path[0].textContent) {
       value = "O";
       e.path[0].textContent = value;
+      count++;
+    }
+    // draw condition
+    if(count === 9) {
+    setTimeout(clearBoard,350);
     }
     //win conditons
     for (let i = 0; i < XandOMatrix.length; i++) {
