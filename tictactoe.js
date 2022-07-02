@@ -30,6 +30,7 @@ function clearBoard() {
   let row = 0;
   let colown = 0;
   value = "O";
+  count = 0;
   while (row < XandOMatrix.length) {
     XandOMatrix[row][colown].textContent = "";
     colown++;
@@ -53,7 +54,6 @@ while (row < XandOMatrix.length) {
     }
     // draw condition
     if(count === 9) {
-      count=0;
     setTimeout(clearBoard,350);
     }
     //win conditons
