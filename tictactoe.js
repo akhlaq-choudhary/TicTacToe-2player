@@ -52,7 +52,7 @@ while (row < XandOMatrix.length) {
       count++;
     }
     // draw condition
-    if(count === 9) {
+    if(count >= 9) {
     setTimeout(clearBoard,350);
     }
     //win conditons
